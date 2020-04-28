@@ -1,13 +1,13 @@
 {
-  "name": "ng-polaris",
+  "name": "sencha-ui",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start:sencha": "ng build sencha-ui --watch",
     "start:examples": "ng serve examples",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
+    "build": "ng build sencha-ui",
+    "test": "ng test sencha-ui",
+    "lint": "ng lint sencha-ui",
     "e2e": "ng e2e"
   },
   "private": true,

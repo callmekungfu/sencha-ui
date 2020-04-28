@@ -3,46 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-polaris": {
-      "projectType": "library",
-      "root": "projects/ng-polaris",
-      "sourceRoot": "projects/ng-polaris/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ng-polaris/tsconfig.lib.json",
-            "project": "projects/ng-polaris/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ng-polaris/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-polaris/src/test.ts",
-            "tsConfig": "projects/ng-polaris/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-polaris/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ng-polaris/tsconfig.lib.json",
-              "projects/ng-polaris/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "examples": {
       "projectType": "application",
       "schematics": {
@@ -160,6 +120,46 @@
             "production": {
               "devServerTarget": "examples:serve:production"
             }
+          }
+        }
+      }
+    },
+    "sencha-ui": {
+      "projectType": "library",
+      "root": "projects/sencha-ui",
+      "sourceRoot": "projects/sencha-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/sencha-ui/tsconfig.lib.json",
+            "project": "projects/sencha-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sencha-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sencha-ui/src/test.ts",
+            "tsConfig": "projects/sencha-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/sencha-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sencha-ui/tsconfig.lib.json",
+              "projects/sencha-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "ng-polaris": [
-        "dist/ng-polaris/ng-polaris",
-        "dist/ng-polaris"
+      "sencha-ui": [
+        "dist/sencha-ui/sencha-ui",
+        "dist/sencha-ui"
       ]
     }
   },
