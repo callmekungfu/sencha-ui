@@ -91,8 +91,8 @@ function setContextStyle(key: string, data: ThemeContext) {
     data.background
   );
   document.documentElement.style.setProperty(
-    `--s-${key}-background-activated-color`,
-    new tinycolor(data.background).darken(20).toHexString()
+    `--s-${key}-activated-color`,
+    new tinycolor(data.background).darken(10).toHexString()
   );
   document.documentElement.style.setProperty(
     `--s-${key}-text-color`,

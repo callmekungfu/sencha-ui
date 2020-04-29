@@ -16,6 +16,15 @@ $text-color-data: (
   success: var(--s-success-text-color),
 );
 
+$activated-color-data: (
+  primary: var(--s-primary-activated-color),
+  secondary: var(--s-secondary-activated-color),
+  danger: var(--s-danger-activated-color),
+  info: var(--s-info-activated-color),
+  warning: var(--s-warning-activated-color),
+  success: var(--s-success-activated-color),
+);
+
 /// Returns the border radius of the specified size.
 /// @param {String} $size - The border radius’s size.
 /// @return {String} The border radius value.
@@ -26,4 +35,8 @@ $text-color-data: (
 
 @function text-color($key: primary) {
   @return map-get($text-color-data, $key);
+}
+
+@function activated-color($key: primary) {
+  @return map-get($activated-color-data, $key);
 }

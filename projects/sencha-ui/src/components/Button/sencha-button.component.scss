@@ -1,6 +1,7 @@
 @import '../../styles/foundational.scss';
 
 $primary: color();
+$primary-dark: activated-color();
 
 .btn {
   font-family: font-family(base);
@@ -9,15 +10,16 @@ $primary: color();
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
-  transition: 0.3s easing() all;
+  transition: 0.2s easing() all;
   &.disabled,
   &:disabled {
     opacity: 0.75;
     cursor: unset;
   }
+
   &:hover,
   &:focus {
-    opacity: 0.8;
+    transform: translateY(-2px);
   }
 }
 
@@ -25,4 +27,9 @@ $primary: color();
   background-color: $primary;
   border-color: $primary;
   color: text-color();
+  &:hover,
+  &:focus {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+  }
 }
