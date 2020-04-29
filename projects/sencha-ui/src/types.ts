@@ -1,10 +1,6 @@
 export interface ThemeContext {
   text: string;
   background: string;
-  activated?: {
-    text: string;
-    background: string;
-  };
 }
 
 export interface SenchaColorTheme {
@@ -14,6 +10,8 @@ export interface SenchaColorTheme {
   success?: ThemeContext;
   warning?: ThemeContext;
   info?: ThemeContext;
+  background?: string;
+  text?: string;
 }
 
 export interface SenchaElement {

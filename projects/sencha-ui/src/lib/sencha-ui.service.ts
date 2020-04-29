@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
 import { SenchaColorTheme, ThemeContext } from '../types';
 import { BehaviorSubject } from 'rxjs';
+import { tinycolor } from '../utilities/tiny-colors';
 
 const DEFAULT_THEME: SenchaColorTheme = {
   primary: {
     text: '#fff',
     background: '#007bff',
-    activated: {
-      text: '#fff',
-      background: '#0069d9',
-    },
   },
   secondary: {
     background: '#6c757d',
@@ -25,12 +22,14 @@ const DEFAULT_THEME: SenchaColorTheme = {
   },
   warning: {
     background: '#ffc107',
-    text: '#fff',
+    text: '#333',
   },
   success: {
     background: '#28a745',
     text: '#fff',
   },
+  background: '#fefefe',
+  text: '#333',
 };
 
 @Injectable({
@@ -42,14 +41,61 @@ export class SenchaUiService {
     this._uiTheme
   );
 
-  constructor() {}
+  constructor() {
+    this._updateWebAPICSSVariables(DEFAULT_THEME);
+  }
 
   public setUITheme(theme: SenchaColorTheme) {
     this._uiTheme = theme;
+    this._updateWebAPICSSVariables(theme);
     this._uiThemeSub.next(theme);
   }
 
   public UIThemeChange() {
     return this._uiThemeSub.asObservable();
   }
+
+  private _updateWebAPICSSVariables({
+    primary,
+    danger,
+    info,
+    secondary,
+    success,
+    warning,
+  }: SenchaColorTheme) {
+    console.log(new tinycolor(primary.background).darken(20).toHexString());
+    if (primary) {
+      setContextStyle('primary', primary);
+    }
+    if (secondary) {
+      setContextStyle('secondary', secondary);
+    }
+    if (info) {
+      setContextStyle('info', info);
+    }
+    if (danger) {
+      setContextStyle('danger', danger);
+    }
+    if (success) {
+      setContextStyle('success', success);
+    }
+    if (warning) {
+      setContextStyle('warning', warning);
+    }
+  }
+}
+
+function setContextStyle(key: string, data: ThemeContext) {
+  document.documentElement.style.setProperty(
+    `--s-${key}-background-color`,
+    data.background
+  );
+  document.documentElement.style.setProperty(
+    `--s-${key}-background-activated-color`,
+    new tinycolor(data.background).darken(20).toHexString()
+  );
+  document.documentElement.style.setProperty(
+    `--s-${key}-text-color`,
+    data.text
+  );
 }

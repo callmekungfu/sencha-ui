@@ -1,5 +1,28 @@
 @import '../../styles/foundational.scss';
 
+$primary: color();
+
 .btn {
-  border-radius: border-radius('base');
+  font-family: font-family(base);
+  padding: 0.75em 1.5em 0.75em;
+  border-radius: border-radius(base);
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+  transition: 0.3s easing() all;
+  &.disabled,
+  &:disabled {
+    opacity: 0.75;
+    cursor: unset;
+  }
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  color: text-color();
 }

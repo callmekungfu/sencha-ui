@@ -1,0 +1,29 @@
+$color-data: (
+  primary: var(--s-primary-background-color),
+  secondary: var(--s-secondary-background-color),
+  danger: var(--s-danger-background-color),
+  info: var(--s-info-background-color),
+  warning: var(--s-warning-background-color),
+  success: var(--s-success-background-color),
+);
+
+$text-color-data: (
+  primary: var(--s-primary-text-color),
+  secondary: var(--s-secondary-text-color),
+  danger: var(--s-danger-text-color),
+  info: var(--s-info-text-color),
+  warning: var(--s-warning-text-color),
+  success: var(--s-success-text-color),
+);
+
+/// Returns the border radius of the specified size.
+/// @param {String} $size - The border radius’s size.
+/// @return {String} The border radius value.
+
+@function color($key: primary) {
+  @return map-get($color-data, $key);
+}
+
+@function text-color($key: primary) {
+  @return map-get($text-color-data, $key);
+}
