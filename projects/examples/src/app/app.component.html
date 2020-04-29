@@ -1,19 +1,19 @@
 <sc-container>
-  <sencha-button [type]="'primary'">Primary</sencha-button>
-  <sencha-button [type]="'secondary'">Secondary</sencha-button>
-  <sencha-button [type]="'info'">Info</sencha-button>
-  <sencha-button [type]="'success'">Success</sencha-button>
-  <sencha-button [type]="'warning'">Warning</sencha-button>
-  <sencha-button [type]="'danger'">Danger</sencha-button>
+  <sc-row>
+    <sc-column
+      [xs]="6"
+      [sm]="12"
+      [md]="0"
+      [lg]="12"
+      [xl]="12"
+    >
+      <sencha-button [type]="'primary'">Primary</sencha-button>
+      <sencha-button [type]="'secondary'">Secondary</sencha-button>
+      <sencha-button [type]="'info'">Info</sencha-button>
+      <sencha-button [type]="'success'">Success</sencha-button>
+      <sencha-button [type]="'warning'">Warning</sencha-button>
+      <sencha-button [type]="'danger'">Danger</sencha-button>
+    </sc-column>
+  </sc-row>
 </sc-container>
-
-
-
-
-
-
-
-
-
-
 <router-outlet></router-outlet>

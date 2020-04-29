@@ -76,7 +76,6 @@ export class SenchaUiService {
     success,
     warning,
   }: SenchaColorTheme) {
-    console.log(new tinycolor(primary.background).darken(20).toHexString());
     if (primary) {
       _setContextStyle('primary', primary);
     }

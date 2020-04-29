@@ -3,7 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SenchaButtonModule, SenchaContainerModule } from 'sencha-ui';
+import {
+  SenchaButtonModule,
+  SenchaContainerModule,
+  SenchaRowModule,
+  SenchaColumnModule,
+} from 'sencha-ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +17,8 @@ import { SenchaButtonModule, SenchaContainerModule } from 'sencha-ui';
     AppRoutingModule,
     SenchaButtonModule,
     SenchaContainerModule,
+    SenchaRowModule,
+    SenchaColumnModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
