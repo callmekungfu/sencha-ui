@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://i.imgur.com/f3SKvrO.png">
+  <img width="400" src="https://i.imgur.com/YZiO2z7.png">
 </p>
 
 <h1 align="center">Sencha UI</h1>
 
 <p align="center">
-  Sencha UI is a Comforting Design Language and Reliable UI Kit.
+  Sencha UI is a Calming Design Language and Reliable UI Kit.
 </p>
 
 <p align="center">
