@@ -21,7 +21,7 @@ export type SenchaButtonType =
 export type SenchaButtonRole = 'submit' | 'button' | 'reset';
 
 @Component({
-  selector: 'sencha-button',
+  selector: 'sc-button',
   templateUrl: 'sencha-button.component.html',
   styleUrls: ['sencha-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
