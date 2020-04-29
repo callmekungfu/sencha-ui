@@ -4,6 +4,7 @@ import {
   OnDestroy,
   Input,
   ChangeDetectionStrategy,
+  OnChanges,
 } from '@angular/core';
 import { SenchaUiService } from '../../lib/sencha-ui.service';
 import { Subscription } from 'rxjs';
@@ -25,7 +26,8 @@ export type SenchaButtonRole = 'submit' | 'button' | 'reset';
   styleUrls: ['sencha-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SenchaButtonComponent implements OnInit, OnDestroy, SenchaElement {
+export class SenchaButtonComponent
+  implements OnInit, OnDestroy, OnChanges, SenchaElement {
   @Input() type: SenchaButtonType = 'primary';
   @Input() role: SenchaButtonRole = 'button';
   @Input() disabled = false;
@@ -36,6 +38,7 @@ export class SenchaButtonComponent implements OnInit, OnDestroy, SenchaElement {
 
   sub: Subscription;
   theme: SenchaColorTheme;
+  btnClasses: string[] = [];
   constructor(private commonService: SenchaUiService) {}
 
   ngOnInit() {
@@ -44,7 +47,25 @@ export class SenchaButtonComponent implements OnInit, OnDestroy, SenchaElement {
     });
   }
 
+  ngOnChanges() {
+    this.btnClasses = this.processButtonClasses();
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  processButtonClasses() {
+    let classes = [];
+    if (this.type) {
+      classes = [this.type];
+    }
+    if (this.fluid) {
+      classes = [...classes, 'fluid'];
+    }
+    if (this.loading) {
+      classes = [...classes, 'loading'];
+    }
+    return classes;
   }
 }

@@ -28,7 +28,8 @@
               "projects/examples/src/assets"
             ],
             "styles": [
-              "projects/examples/src/styles.scss"
+              "projects/examples/src/styles.scss",
+              "dist/sencha-ui/styles/global.css"
             ],
             "scripts": []
           },

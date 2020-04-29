@@ -14,13 +14,14 @@ $warning: color(warning);
 $warning-dark: activated-color(warning);
 
 .btn {
-  font-family: font-family(base);
-  padding: 0.75em 1.5em 0.75em;
+  padding: 0.75em 1.5em;
   border-radius: border-radius(base);
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
   transition: 0.2s easing() all;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.06),
+    0 4px 4px rgba(0, 0, 0, 0.08), 0 8px 8px rgba(0, 0, 0, 0.1);
   &.disabled,
   &:disabled {
     opacity: 0.75;
@@ -31,6 +32,10 @@ $warning-dark: activated-color(warning);
   &:focus:enabled {
     transform: translateY(-1px);
   }
+}
+
+.fluid {
+  width: 100%;
 }
 
 .primary {
