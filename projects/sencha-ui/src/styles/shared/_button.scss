@@ -1,0 +1,9 @@
+@mixin colored-button($bg, $bg-active, $text) {
+  background-color: $bg;
+  border-color: $bg;
+  color: $text;
+  &:hover:enabled {
+    background-color: $bg-active;
+    border-color: $bg-active;
+  }
+}

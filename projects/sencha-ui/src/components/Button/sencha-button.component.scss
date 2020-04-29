@@ -1,7 +1,17 @@
-@import '../../styles/foundational.scss';
+@import '../../styles/common.scss';
 
 $primary: color();
 $primary-dark: activated-color();
+$secondary: color(secondary);
+$secondary-dark: activated-color(secondary);
+$success: color(success);
+$success-dark: activated-color(success);
+$danger: color(danger);
+$danger-dark: activated-color(danger);
+$info: color(info);
+$info-dark: activated-color(info);
+$warning: color(warning);
+$warning-dark: activated-color(warning);
 
 .btn {
   font-family: font-family(base);
@@ -17,19 +27,32 @@ $primary-dark: activated-color();
     cursor: unset;
   }
 
-  &:hover,
-  &:focus {
-    transform: translateY(-2px);
+  &:hover:enabled,
+  &:focus:enabled {
+    transform: translateY(-1px);
   }
 }
 
-.btn-primary {
-  background-color: $primary;
-  border-color: $primary;
-  color: text-color();
-  &:hover,
-  &:focus {
-    background-color: $primary-dark;
-    border-color: $primary-dark;
-  }
+.primary {
+  @include colored-button($primary, $primary-dark, text-color());
+}
+
+.secondary {
+  @include colored-button($secondary, $secondary-dark, text-color(secondary));
+}
+
+.success {
+  @include colored-button($success, $success-dark, text-color(success));
+}
+
+.danger {
+  @include colored-button($danger, $danger-dark, text-color(danger));
+}
+
+.warning {
+  @include colored-button($warning, $warning-dark, text-color(warning));
+}
+
+.info {
+  @include colored-button($info, $info-dark, text-color(info));
 }

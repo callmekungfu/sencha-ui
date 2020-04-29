@@ -3,6 +3,10 @@ import { SenchaColorTheme, ThemeContext } from '../types';
 import { BehaviorSubject } from 'rxjs';
 import { tinycolor } from '../utilities/tiny-colors';
 
+const DARKEN_VALUE = 8;
+
+// Default theme used if no additional theme color is defined
+// Colors inspired by Bootstrap UI
 const DEFAULT_THEME: SenchaColorTheme = {
   primary: {
     text: '#fff',
@@ -32,6 +36,15 @@ const DEFAULT_THEME: SenchaColorTheme = {
   text: '#333',
 };
 
+/**
+ * @abstract SenchaUI Configuration Service
+ *
+ * By using this service you can modify the UI Kit color theme
+ * on the fly.
+ *
+ * **Service is provided at root level, do not manually provide
+ * the service at application level.**
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -46,7 +59,7 @@ export class SenchaUiService {
   }
 
   public setUITheme(theme: SenchaColorTheme) {
-    this._uiTheme = theme;
+    this._uiTheme = Object.assign(this._uiTheme, theme);
     this._updateWebAPICSSVariables(theme);
     this._uiThemeSub.next(theme);
   }
@@ -65,34 +78,40 @@ export class SenchaUiService {
   }: SenchaColorTheme) {
     console.log(new tinycolor(primary.background).darken(20).toHexString());
     if (primary) {
-      setContextStyle('primary', primary);
+      _setContextStyle('primary', primary);
     }
     if (secondary) {
-      setContextStyle('secondary', secondary);
+      _setContextStyle('secondary', secondary);
     }
     if (info) {
-      setContextStyle('info', info);
+      _setContextStyle('info', info);
     }
     if (danger) {
-      setContextStyle('danger', danger);
+      _setContextStyle('danger', danger);
     }
     if (success) {
-      setContextStyle('success', success);
+      _setContextStyle('success', success);
     }
     if (warning) {
-      setContextStyle('warning', warning);
+      _setContextStyle('warning', warning);
     }
   }
 }
 
-function setContextStyle(key: string, data: ThemeContext) {
+/**
+ * Store the matching color in the browser root.
+ *
+ * @param key the color key usually a single word
+ * @param data The color data object
+ */
+function _setContextStyle(key: string, data: ThemeContext) {
   document.documentElement.style.setProperty(
     `--s-${key}-background-color`,
     data.background
   );
   document.documentElement.style.setProperty(
     `--s-${key}-activated-color`,
-    new tinycolor(data.background).darken(10).toHexString()
+    new tinycolor(data.background).darken(DARKEN_VALUE).toHexString()
   );
   document.documentElement.style.setProperty(
     `--s-${key}-text-color`,
