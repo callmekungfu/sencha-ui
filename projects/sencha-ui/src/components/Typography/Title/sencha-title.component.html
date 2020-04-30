@@ -1,7 +1,14 @@
 <div
   class="title"
   [ngClass]="classes"
-  #contentWrapper
 >
-  <ng-content></ng-content>
+  <div
+    hidden
+    aria-hidden="true"
+    #contentWrapper
+  >
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf="titleEllipsis">{{titleEllipsis.getShortenText()}} ...</div>
+  <div *ngIf="!titleEllipsis">{{titleText}}</div>
 </div>

@@ -5,10 +5,13 @@ import {
   OnChanges,
   AfterViewInit,
   ElementRef,
-  Renderer2,
   ViewChild,
+  ChangeDetectorRef,
 } from '@angular/core';
-import { SenchaEllipsisText } from '../../../utilities/ellipsis-text';
+import {
+  SenchaEllipsisText,
+  SenchaTruncateTextConfig,
+} from '../../../utilities/ellipsis-text';
 
 export type TitleType =
   | 'display-xl'
@@ -36,16 +39,27 @@ export class SenchaTitleComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() set type(value: TitleType) {
     this.titleType = value;
   }
+
+  @Input() set ellipsis(config: SenchaTruncateTextConfig) {
+    if (config) {
+      this.isEllipsis = config;
+    } else {
+      this.ellipsis = {};
+    }
+  }
+
   @ViewChild('contentWrapper') content: ElementRef;
 
   titleType: TitleType = 'display-xl';
   isUnderline = false;
   isLineThrough = false;
   isDisabled = false;
+  isEllipsis: SenchaTruncateTextConfig;
   classes: string[];
   titleText: string;
+  titleEllipsis: SenchaEllipsisText;
 
-  constructor() {}
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.classes = this.constructTitleClassArray();
@@ -55,19 +69,24 @@ export class SenchaTitleComponent implements OnInit, OnChanges, AfterViewInit {
     this.classes = this.constructTitleClassArray();
   }
 
+  /**
+   * Since we depend on getting the value of the text thru the dom,
+   * we need to wait until the dom is ready before trying to generate
+   * the text display again.
+   */
   ngAfterViewInit() {
     const textNode = this.content.nativeElement.innerText;
     this.titleText = textNode ?? '';
-    const test = new SenchaEllipsisText(textNode, {
-      length: 1,
-    });
-    console.log(test);
+    if (this.isEllipsis) {
+      this.titleEllipsis = new SenchaEllipsisText(textNode, this.isEllipsis);
+    }
+    this.cd.detectChanges();
   }
 
   /**
    * Select the classes to apply to the title.
    *
-   * Currently, we only applie either line through or underline
+   * Currently, we only apply either line through or underline
    */
   private constructTitleClassArray(): string[] {
     let classes: string[] = [];

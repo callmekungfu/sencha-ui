@@ -20,17 +20,11 @@ $warning-dark: activated-color(warning);
   border-style: solid;
   cursor: pointer;
   transition: 0.2s easing() all;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 2px 2px rgba(0, 0, 0, 0.06),
-    0 4px 4px rgba(0, 0, 0, 0.08), 0 8px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
   &.disabled,
   &:disabled {
     opacity: 0.75;
     cursor: unset;
-  }
-
-  &:hover:enabled,
-  &:focus:enabled {
-    transform: translateY(-1px);
   }
 }
 
