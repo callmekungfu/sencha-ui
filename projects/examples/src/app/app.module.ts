@@ -8,6 +8,7 @@ import {
   SenchaContainerModule,
   SenchaRowModule,
   SenchaColumnModule,
+  SenchaTitleModule,
 } from 'sencha-ui';
 
 @NgModule({
@@ -19,6 +20,7 @@ import {
     SenchaContainerModule,
     SenchaRowModule,
     SenchaColumnModule,
+    SenchaTitleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

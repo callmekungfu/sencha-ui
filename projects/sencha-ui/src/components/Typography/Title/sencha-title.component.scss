@@ -1,0 +1,68 @@
+@import '../../../styles/foundational/typography';
+
+.display-xl {
+  font-size: font-size(display-x-large);
+  line-height: line-height(display-x-large);
+  font-weight: 500;
+}
+
+.display-lg {
+  font-size: font-size(display-large);
+  line-height: line-height(display-large);
+  font-weight: 500;
+}
+
+.display-md {
+  font-size: font-size(display-medium);
+  line-height: line-height(display-medium);
+  font-weight: 500;
+}
+
+.display-sm {
+  font-size: font-size(display-small);
+  line-height: line-height(display-small);
+  font-weight: 500;
+}
+
+.heading {
+  font-size: font-size(heading);
+  line-height: line-height(heading);
+  font-weight: 500;
+}
+
+.sub-heading {
+  font-size: font-size(subheading);
+  line-height: line-height(subheading);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .display-xl {
+    font-size: font-size(display-x-large, large-screen);
+    line-height: line-height(display-x-large, large-screen);
+  }
+
+  .display-lg {
+    font-size: font-size(display-large, large-screen);
+    line-height: line-height(display-large, large-screen);
+  }
+
+  .display-md {
+    font-size: font-size(display-medium, large-screen);
+    line-height: line-height(display-medium, large-screen);
+  }
+
+  .display-sm {
+    font-size: font-size(display-small, large-screen);
+    line-height: line-height(display-small, large-screen);
+  }
+
+  .heading {
+    font-size: font-size(heading, large-screen);
+  }
+
+  .sub-heading {
+    font-size: font-size(subheading, large-screen);
+  }
+}

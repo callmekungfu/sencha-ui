@@ -1,5 +1,9 @@
 @import 'foundational.scss';
 
+:root {
+  --sc-text-color: #212b36;
+}
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -13,4 +17,5 @@ html {
 
 body {
   font-family: font-family();
+  color: var(--sc-text-color);
 }

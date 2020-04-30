@@ -22,3 +22,9 @@ export * from './components/Layout/Row/sencha-row.component';
 
 export * from './components/Layout/Column/sencha-column.module';
 export * from './components/Layout/Column/sencha-column.component';
+
+// Typography
+
+export * from './components/Typography/Title/sencha-title.module';
+export * from './components/Typography/Title/sencha-title.component';
+export * from './utilities/ellipsis-text';
