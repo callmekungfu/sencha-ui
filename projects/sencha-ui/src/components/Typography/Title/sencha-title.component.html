@@ -3,12 +3,14 @@
   [ngClass]="classes"
 >
   <div
-    hidden
-    aria-hidden="true"
+    [hidden]="isEllipsis"
+    [attr.aria-hidden]="isEllipsis ? 'true' : 'false'"
     #contentWrapper
   >
     <ng-content></ng-content>
   </div>
-  <div *ngIf="titleEllipsis">{{titleEllipsis.getShortenText()}} ...</div>
-  <div *ngIf="!titleEllipsis">{{titleText}}</div>
+  <ng-container *ngIf="isEllipsis">
+    <div *ngIf="titleEllipsis">{{titleEllipsis.getShortenText()}} ...</div>
+    <div *ngIf="!titleEllipsis">{{titleText}}</div>
+  </ng-container>
 </div>
