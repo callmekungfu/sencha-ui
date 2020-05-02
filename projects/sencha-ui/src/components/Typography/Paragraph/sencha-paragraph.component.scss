@@ -1,0 +1,14 @@
+@import '../../../styles/foundational/typography';
+
+.paragraph {
+  line-height: line-height(body);
+  font-size: font-size(body);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 992px) {
+  .paragraph {
+    font-size: font-size(body, large-screen);
+  }
+}

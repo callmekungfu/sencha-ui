@@ -27,4 +27,7 @@ export * from './components/Layout/Column/sencha-column.component';
 
 export * from './components/Typography/Title/sencha-title.module';
 export * from './components/Typography/Title/sencha-title.component';
-export * from './utilities/ellipsis-text';
+export * from './components/Typography/Text/sencha-text.module';
+export * from './components/Typography/Text/sencha-text.component';
+export * from './components/Typography/Paragraph/sencha-paragraph.module';
+export * from './components/Typography/Paragraph/sencha-paragraph.component';

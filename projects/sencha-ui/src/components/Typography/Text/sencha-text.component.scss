@@ -1,0 +1,13 @@
+@import '../../../styles/foundational/typography';
+
+.text {
+  line-height: line-height(body);
+  font-size: font-size(body);
+  font-weight: 400;
+}
+
+@media (min-width: 992px) {
+  .text {
+    font-size: font-size(body, large-screen);
+  }
+}

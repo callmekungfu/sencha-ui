@@ -1,0 +1,16 @@
+<div
+  class="paragraph"
+  [ngClass]="classes"
+>
+  <div
+    [hidden]="isEllipsis"
+    [attr.aria-hidden]="isEllipsis ? 'true' : 'false'"
+    #contentWrapper
+  >
+    <ng-content></ng-content>
+  </div>
+  <ng-container *ngIf="isEllipsis">
+    <div *ngIf="titleEllipsis">{{titleEllipsis.getShortenText()}} ...</div>
+    <div *ngIf="!titleEllipsis">{{titleText}}</div>
+  </ng-container>
+</div>
