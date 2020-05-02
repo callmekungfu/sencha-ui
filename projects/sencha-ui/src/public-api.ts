@@ -25,6 +25,7 @@ export * from './components/Layout/Column/sencha-column.component';
 
 // Typography
 
+export * from './components/Typography/sencha-typography.module';
 export * from './components/Typography/Title/sencha-title.module';
 export * from './components/Typography/Title/sencha-title.component';
 export * from './components/Typography/Text/sencha-text.module';
