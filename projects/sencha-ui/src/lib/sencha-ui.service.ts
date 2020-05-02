@@ -33,7 +33,7 @@ const DEFAULT_THEME: SenchaColorTheme = {
     text: '#fff',
   },
   background: '#fefefe',
-  text: '#333',
+  text: '#212b36',
 };
 
 /**
@@ -75,6 +75,8 @@ export class SenchaUiService {
     secondary,
     success,
     warning,
+    background,
+    text,
   }: SenchaColorTheme) {
     if (primary) {
       _setContextStyle('primary', primary);
@@ -93,6 +95,17 @@ export class SenchaUiService {
     }
     if (warning) {
       _setContextStyle('warning', warning);
+    }
+
+    if (background) {
+      document.documentElement.style.setProperty(
+        `--s-background-color`,
+        background
+      );
+    }
+
+    if (text) {
+      document.documentElement.style.setProperty(`--s-text-color`, text);
     }
   }
 }
