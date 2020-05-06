@@ -12,6 +12,11 @@
       "element",
       "sc",
       "kebab-case"
-    ]
+    ],
+    "variable-name": {
+      "options": [
+        "allow-leading-underscore"
+      ]
+    }
   }
 }

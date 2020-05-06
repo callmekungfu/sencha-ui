@@ -9,7 +9,9 @@ import {
   SenchaRowModule,
   SenchaColumnModule,
   SenchaTypographyModule,
+  SenchaInputModule,
 } from 'sencha-ui';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,8 @@ import {
     SenchaRowModule,
     SenchaColumnModule,
     SenchaTypographyModule,
+    SenchaInputModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

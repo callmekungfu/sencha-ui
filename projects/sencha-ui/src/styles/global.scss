@@ -1,8 +1,4 @@
-@import 'foundational.scss';
-
-:root {
-  --sc-text-color: #212b36;
-}
+@import 'common.scss';
 
 html {
   box-sizing: border-box;
@@ -16,6 +12,11 @@ html {
 }
 
 body {
+  background-color: var(--s-background-color);
   font-family: font-family();
-  color: var(--sc-text-color);
+  color: var(--s-text-color);
+}
+
+textarea {
+  resize: vertical;
 }

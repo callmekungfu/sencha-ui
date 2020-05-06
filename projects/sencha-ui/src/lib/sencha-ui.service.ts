@@ -10,34 +10,34 @@ const DARKEN_VALUE = 8;
 const DEFAULT_THEME: SenchaColorTheme = {
   primary: {
     text: '#fff',
-    background: '#007bff',
+    background: '#1890ff',
   },
   secondary: {
-    background: '#6c757d',
+    background: '#8c8c8c',
     text: '#fff',
   },
   danger: {
-    background: '#dc3545',
+    background: '#f5222d',
     text: '#fff',
   },
   info: {
-    background: '#17a2b8',
+    background: '#13c2c2',
     text: '#fff',
   },
   warning: {
-    background: '#ffc107',
-    text: '#333',
+    background: '#faad14',
+    text: '#fff',
   },
   success: {
-    background: '#28a745',
+    background: '#52c41a',
     text: '#fff',
   },
   background: '#fefefe',
-  text: '#333',
+  text: '#212b36',
 };
 
 /**
- * @abstract SenchaUI Configuration Service
+ * SenchaUI Configuration Service
  *
  * By using this service you can modify the UI Kit color theme
  * on the fly.
@@ -75,6 +75,8 @@ export class SenchaUiService {
     secondary,
     success,
     warning,
+    background,
+    text,
   }: SenchaColorTheme) {
     if (primary) {
       _setContextStyle('primary', primary);
@@ -93,6 +95,17 @@ export class SenchaUiService {
     }
     if (warning) {
       _setContextStyle('warning', warning);
+    }
+
+    if (background) {
+      document.documentElement.style.setProperty(
+        `--s-background-color`,
+        background
+      );
+    }
+
+    if (text) {
+      document.documentElement.style.setProperty(`--s-text-color`, text);
     }
   }
 }
