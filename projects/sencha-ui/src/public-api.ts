@@ -32,3 +32,8 @@ export * from './components/Typography/Text/sencha-text.module';
 export * from './components/Typography/Text/sencha-text.component';
 export * from './components/Typography/Paragraph/sencha-paragraph.module';
 export * from './components/Typography/Paragraph/sencha-paragraph.component';
+
+// Inputs
+
+export * from './components/Form/Input/sencha-input.component';
+export * from './components/Form/Input/sencha-input.module';

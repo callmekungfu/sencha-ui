@@ -1,0 +1,12 @@
+<div class="sc-input-wrapper">
+  <input
+    [type]="type"
+    [name]="name"
+    [id]="id"
+    [attr.maxLength]="maxLength ? maxLength : null"
+    placeholder="placeholder"
+    [(ngModel)]="ngModel"
+    (ngModelChange)="onModelChange($event)"
+    [disabled]="_disabled"
+  >
+</div>

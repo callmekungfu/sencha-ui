@@ -2,19 +2,9 @@
   <div class="mb-20">
     <sc-row>
       <sc-column>
-        <sc-title type="display-lg">Orders</sc-title>
+        <sc-title type="display-lg">Buttons</sc-title>
         <div class="mb-4"></div>
-        <sc-title type="sub-heading">
-          Create, manage, and view order on this page
-        </sc-title>
-        <sc-text>Text Test</sc-text>
-        <sc-text>Text Test</sc-text>
-        <sc-paragraph>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quisquam nulla quos enim neque minima voluptas aliquam, possimus sit necessitatibus dolorem aspernatur sed non facilis at quasi doloremque et iure.
-        </sc-paragraph>
-        <sc-paragraph>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quisquam nulla quos enim neque minima voluptas aliquam, possimus sit necessitatibus dolorem aspernatur sed non facilis at quasi doloremque et iure.
-        </sc-paragraph>
+        <sc-title type="sub-heading">All styles of Buttons</sc-title>
       </sc-column>
     </sc-row>
   </div>
@@ -32,6 +22,37 @@
       <sc-button [type]="'success'">Success</sc-button>
       <sc-button [type]="'warning'">Warning</sc-button>
       <sc-button [type]="'danger'">Danger</sc-button>
+    </sc-column>
+  </sc-row>
+  <div class="mb-20"></div>
+  <div class="mb-20">
+    <sc-row>
+      <sc-column>
+        <sc-title type="display-lg">Input</sc-title>
+        <div class="mb-4"></div>
+        <sc-title type="sub-heading">
+          Create, manage, and view order on this page
+        </sc-title>
+      </sc-column>
+    </sc-row>
+  </div>
+  <sc-row>
+    <sc-column
+      [xs]="6"
+      [sm]="12"
+      [md]="0"
+      [lg]="12"
+      [xl]="12"
+    >
+      <sc-input
+        name="test"
+        id="test"
+        maxLength="10"
+        type="text"
+        [(ngModel)]="title"
+        disabled
+      ></sc-input>
+      {{title}}
     </sc-column>
   </sc-row>
 </sc-container>
