@@ -27,3 +27,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Sencha UI Lint
         run: npm run lint
+      - name: Sencha UI Build
+        run: npm run build
+      - name: Sencha UI Test
+        run: npm run test:ci
