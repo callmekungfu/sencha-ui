@@ -7,7 +7,7 @@
     "start:examples": "ng serve examples",
     "build:style": "node-sass --output-style compressed projects/sencha-ui/src/styles/global.scss -o dist/sencha-ui/styles",
     "build": "ng build sencha-ui && npm run build:style",
-    "test": "ng test sencha-ui",
+    "test:ci": "ng test sencha-ui --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint sencha-ui",
     "e2e": "ng e2e"
   },
