@@ -1,28 +1,20 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  OnInit,
+  Directive,
+  HostBinding,
+  Renderer2,
+  ElementRef,
+} from '@angular/core';
 
-@Component({
-  selector: 'sc-input',
-  templateUrl: 'sencha-input.component.html',
-  styleUrls: ['sencha-input.component.scss'],
+@Directive({
+  selector: 'input[scInput], textarea[scInput]',
+  exportAs: 'scInput',
 })
-export class SenchaInputComponent implements OnInit {
-  @Input() name: string;
-  @Input() id: string;
-  @Input() maxLength: number;
-  @Input() type = 'text';
-  @Input() ngModel: any;
-  @Input() set disabled(value: boolean | string) {
-    this._disabled = value !== false && value !== 'false';
+export class SenchaInputDirective implements OnInit {
+  @HostBinding('class.sc-input-disabled') disabled = 'disabled';
+  constructor(renderer: Renderer2, elementRef: ElementRef) {
+    renderer.addClass(elementRef.nativeElement, 'sc-input');
   }
-
-  @Output() ngModelChange = new EventEmitter();
-
-  _disabled = false;
-  constructor() {}
 
   ngOnInit() {}
-
-  onModelChange(value: any) {
-    this.ngModelChange.emit(value);
-  }
 }

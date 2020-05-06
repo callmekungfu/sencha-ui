@@ -11,6 +11,7 @@ import {
   SenchaTypographyModule,
   SenchaInputModule,
 } from 'sencha-ui';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import {
     SenchaColumnModule,
     SenchaTypographyModule,
     SenchaInputModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

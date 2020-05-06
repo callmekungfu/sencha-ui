@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { SenchaInputComponent } from './sencha-input.component';
+import { SenchaInputDirective } from './sencha-input.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [CommonModule, FormsModule],
-  exports: [SenchaInputComponent],
-  declarations: [SenchaInputComponent],
+  exports: [SenchaInputDirective],
+  declarations: [SenchaInputDirective],
   providers: [],
 })
 export class SenchaInputModule {}

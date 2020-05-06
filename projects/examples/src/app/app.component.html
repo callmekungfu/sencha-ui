@@ -44,14 +44,13 @@
       [lg]="12"
       [xl]="12"
     >
-      <sc-input
+      <input
+        scInput
         name="test"
         id="test"
-        maxLength="10"
         type="text"
         [(ngModel)]="title"
-        disabled
-      ></sc-input>
+      >
       {{title}}
     </sc-column>
   </sc-row>
