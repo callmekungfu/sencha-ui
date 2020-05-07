@@ -1,3 +1,6 @@
+/* tslint:disable */
+// Disable lint until later
+
 let trimLeft = /^\s+/,
   trimRight = /\s+$/,
   tinyCounter = 0,
