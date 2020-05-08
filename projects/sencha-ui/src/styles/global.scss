@@ -1,4 +1,6 @@
 @import 'common.scss';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/cdk/overlay-prebuilt.css';
 
 html {
   box-sizing: border-box;
@@ -19,4 +21,8 @@ body {
 
 textarea {
   resize: vertical;
+}
+
+.sc-no-user-select {
+  user-select: none;
 }

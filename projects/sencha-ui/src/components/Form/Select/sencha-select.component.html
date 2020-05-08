@@ -1,0 +1,24 @@
+<div
+  class="sc-input sc-select"
+  (click)="onClick()"
+  tabindex="0"
+  #selectBody
+>
+  <span class="sc-select-selector">Lucy</span>
+  <span
+    class="material-icons sc-no-user-select"
+    aria-hidden="true"
+  >
+    expand_more
+  </span>
+</div>
+
+
+
+
+<ng-template
+  cdkPortal
+  #selectDropdown
+>
+  <p>Test Overlay</p>
+</ng-template>

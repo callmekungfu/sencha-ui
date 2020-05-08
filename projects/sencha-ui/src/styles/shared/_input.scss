@@ -1,4 +1,5 @@
 .sc-input {
+  display: block;
   font-size: font-size(input);
   line-height: line-height(input);
   background-image: none;
@@ -11,6 +12,24 @@
   &:focus:enabled {
     outline: none;
     border-color: var(--s-primary-background-color);
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
+}
+
+.sc-select {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .sc-select-selector {
+    margin-right: 8px;
+  }
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: var(--s-primary-background-color);
+  }
+  &:focus {
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
 }

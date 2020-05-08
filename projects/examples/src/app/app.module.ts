@@ -10,6 +10,7 @@ import {
   SenchaColumnModule,
   SenchaTypographyModule,
   SenchaInputModule,
+  SenchaSelectModule,
 } from 'sencha-ui';
 import { FormsModule } from '@angular/forms';
 
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     SenchaTypographyModule,
     SenchaInputModule,
     FormsModule,
+    SenchaSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
