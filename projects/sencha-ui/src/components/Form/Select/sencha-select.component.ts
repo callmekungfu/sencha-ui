@@ -9,9 +9,14 @@ import {
   Overlay,
   ConnectionPositionPair,
   PositionStrategy,
+  OverlayRef,
 } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { SenchaSelectDropdownComponent } from './SelectDropdown/sencha-select-dropdown.component';
+import {
+  ElementRuler,
+  ElementRulerRef,
+} from '../../../utilities/element-ruler.service';
 
 const positions = [
   new ConnectionPositionPair(
@@ -31,7 +36,11 @@ const positions = [
 export class SenchaSelectComponent implements OnInit {
   @ViewChild('selectBody') dropdown: ElementRef;
 
-  constructor(private overlay: Overlay) {}
+  overlayReference: OverlayRef;
+  positionStrategy: PositionStrategy;
+  rulerReference: ElementRulerRef;
+
+  constructor(private overlay: Overlay, private ruler: ElementRuler) {}
 
   ngOnInit() {}
 
@@ -39,14 +48,39 @@ export class SenchaSelectComponent implements OnInit {
     this.showDropdown();
   }
 
+  onBlur() {
+    this.hideDropdown();
+  }
+
   private showDropdown() {
-    const positionStrategy = this.getPositionStrategy();
-    const overlayRef = this.overlay.create({
+    if (this.overlayReference) {
+      this.hideDropdown();
+      return;
+    }
+    const positionStrategy = (this.positionStrategy = this.getPositionStrategy());
+    const overlayRef = (this.overlayReference = this.overlay.create({
       positionStrategy,
+    }));
+    const rulerRef = (this.rulerReference = this.ruler.create(
+      this.dropdown.nativeElement,
+      0
+    ));
+    rulerRef.change.subscribe(({ width }) => {
+      overlayRef.updateSize({ width });
+      overlayRef.updatePosition();
     });
     const dropdownPortal = new ComponentPortal(SenchaSelectDropdownComponent);
-    console.log();
     overlayRef.attach(dropdownPortal);
+  }
+
+  private hideDropdown() {
+    this.overlayReference.dispose();
+    this.positionStrategy.dispose();
+    this.rulerReference.dispose();
+
+    this.overlayReference = null;
+    this.positionStrategy = null;
+    this.rulerReference = null;
   }
 
   private getPositionStrategy(): PositionStrategy {

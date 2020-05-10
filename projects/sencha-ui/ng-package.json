@@ -3,5 +3,9 @@
   "dest": "../../dist/sencha-ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "@angular/cdk"
+  ]
 }
