@@ -9,6 +9,12 @@ import {
 
 const ANIMATION_TIMINGS = '400ms cubic-bezier(0.25, 0.8, 0.25, 1)';
 
+export interface ISenchaSelectDropdownOption<V = any> {
+  label: string;
+  value: V;
+  disabled: boolean;
+}
+
 @Component({
   selector: 'sc-dropdown-container',
   templateUrl: 'sencha-select-dropdown.component.html',

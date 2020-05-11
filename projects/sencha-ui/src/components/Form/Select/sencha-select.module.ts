@@ -7,11 +7,20 @@ import { PortalModule } from '@angular/cdk/portal';
 import { SenchaSelectDropdownComponent } from './SelectDropdown/sencha-select-dropdown.component';
 import { ElementRuler } from '../../../utilities/element-ruler.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SenchaSelectOptionComponent } from './SelectOption/sencha-select-option.component';
 
 @NgModule({
   imports: [CommonModule, OverlayModule, PortalModule, BrowserAnimationsModule],
-  exports: [SenchaSelectComponent, SenchaSelectDropdownComponent],
-  declarations: [SenchaSelectComponent, SenchaSelectDropdownComponent],
+  exports: [
+    SenchaSelectComponent,
+    SenchaSelectDropdownComponent,
+    SenchaSelectOptionComponent,
+  ],
+  declarations: [
+    SenchaSelectComponent,
+    SenchaSelectDropdownComponent,
+    SenchaSelectOptionComponent,
+  ],
   entryComponents: [SenchaSelectDropdownComponent],
   providers: [ElementRuler],
 })

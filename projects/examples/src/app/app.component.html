@@ -59,9 +59,6 @@
         <label for="test">Basic Textarea</label>
         <textarea scInput></textarea>
       </div>
-
-
-
     </sc-column>
   </sc-row>
   <div class="mb-20"></div>
@@ -78,7 +75,10 @@
   </div>
   <sc-row>
     <sc-column>
-      <sc-select></sc-select>
+      <sc-select>
+        <sc-select-option [value]="true">Hello World</sc-select-option>
+        <sc-select-option [value]="false">Not Hello World</sc-select-option>
+      </sc-select>
     </sc-column>
   </sc-row>
 </sc-container>

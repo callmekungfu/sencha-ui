@@ -40,4 +40,5 @@ export * from './components/Form/Input/sencha-input.module';
 
 export * from './components/Form/Select/sencha-select.component';
 export * from './components/Form/Select/SelectDropdown/sencha-select-dropdown.component';
+export * from './components/Form/Select/SelectOption/sencha-select-option.component';
 export * from './components/Form/Select/sencha-select.module';

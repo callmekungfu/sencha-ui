@@ -26,3 +26,9 @@ textarea {
 .sc-no-user-select {
   user-select: none;
 }
+
+.sc-hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}

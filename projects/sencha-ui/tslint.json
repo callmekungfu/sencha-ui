@@ -17,6 +17,12 @@
       "options": [
         "allow-leading-underscore"
       ]
+    },
+    "semicolon": {
+      "options": [
+        "always",
+        "ignore-bound-class-methods"
+      ]
     }
   }
 }
